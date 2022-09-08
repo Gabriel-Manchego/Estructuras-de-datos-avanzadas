@@ -36,6 +36,17 @@ void power(Matriz &a, int num){
 		MatrizMult(a,b);
 }
 
+int FibonacciOn(int num){
+	int a = 0, b = 1, c=a+b;
+	if(num == 0)
+		return a;
+	for(int i = 2; i <= num; i++){
+		c = a + b;
+		a = b;
+		b = c;
+	}
+	return b;
+}
 int FibonacciEx(int num){
 	if (num <= 1)
 		return num;
@@ -53,8 +64,9 @@ int main(){
 		a.printmat();
 		cout<<"Respuesta en O(Logn): "<<a.a<<endl;
 	}
-	
+	cout<<"Respuesta con O(n): "<<FibonacciOn(num)<<endl;
 	cout<<"Repuesta con exp: "<< FibonacciEx(num)<<endl;
 	return 0;
 }
+	
 	

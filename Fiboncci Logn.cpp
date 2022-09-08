@@ -36,6 +36,11 @@ void power(Matriz &a, int num){
 		MatrizMult(a,b);
 }
 
+int FibonacciEx(int num){
+	if (num <= 1)
+		return num;
+	return FibonacciEx(num - 1) + FibonacciEx(num - 2);
+}
 int main(){
 	int num;
 	cout << "Ingrese numero: ";
@@ -46,12 +51,10 @@ int main(){
 		Matriz a;
 		power(a,num - 1);
 		a.printmat();
-		cout<<a.a;
+		cout<<"Respuesta en O(Logn): "<<a.a<<endl;
 	}
+	
+	cout<<"Repuesta con exp: "<< FibonacciEx(num)<<endl;
 	return 0;
 }
-	
-	
-	
-	
 	
